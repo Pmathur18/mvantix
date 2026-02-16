@@ -47,7 +47,7 @@ const HomeWeSolve = () => {
           >
             <div className="relative rounded-[2.5rem] overflow-hidden shadow-2xl aspect-4/5 md:aspect-square lg:aspect-auto lg:h-150 border border-slate-100 bg-slate-200">
               <Image
-                src="/images/TechHub.avif"
+                src="/images/home1.jpg"
                 alt="The Talent Gap Problem"
                 fill
                 className="object-cover"

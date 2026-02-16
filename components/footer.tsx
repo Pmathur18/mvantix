@@ -4,13 +4,10 @@ import React from 'react';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
 import { 
-  Twitter, 
   Instagram, 
   Linkedin, 
-  Github, 
   ArrowUpRight,
   Mail,
-  Zap
 } from "lucide-react";
 import Link from 'next/link';
 

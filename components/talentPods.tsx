@@ -49,7 +49,7 @@ const TalentPods = () => {
             <div className="absolute -inset-4 border border-[#7191e6]/20 rounded-[3rem] group-hover:inset-0 transition-all duration-700" />
             <div className="h-100 w-full bg-gray-100 rounded-[2.5rem] overflow-hidden relative shadow-2xl">
               <img 
-                src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=800&q=80" 
+                src="/images/talent1.jpg" 
                 alt="Talent Collaboration"
                 className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-1000 scale-110 group-hover:scale-100"
               />
@@ -70,13 +70,10 @@ const TalentPods = () => {
           {/* TECH IMAGE 2: Small Grid Image */}
           <motion.div className="lg:col-span-2 h-62.5 bg-gray-50 rounded-4xl overflow-hidden relative border border-gray-100 group">
              <img 
-               src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=800&q=80" 
+               src="/images/talent2.jpg"
                alt="Dev Team"
-               className="w-full h-full object-cover opacity-50 group-hover:opacity-100 transition-opacity"
+               className="w-full h-full object-cover"
              />
-             <div className="absolute top-6 left-6 p-4 bg-white/90 backdrop-blur-md rounded-xl border border-gray-100">
-                <p className="text-[#3d52a1] text-[10px] font-semibold tracking-widest uppercase">Pod_Active</p>
-             </div>
           </motion.div>
 
           {/* Remaining Service Cards */}

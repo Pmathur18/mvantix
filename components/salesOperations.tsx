@@ -2,6 +2,7 @@
 
 import React from "react";
 import { motion } from "framer-motion";
+import Image from "next/image";
 import { 
   IconSettingsAutomation, 
   IconUsers, 
@@ -53,27 +54,58 @@ const SalesOperations = () => {
       <div className="container mx-auto px-6 max-w-6xl relative z-10">
         
         {/* Header Section */}
-        <div className="max-w-4xl mb-20">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-          >
+        <div className="flex flex-col lg:flex-row items-center justify-between mb-20 gap-10">
+          <div className="max-w-4xl">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+            >
+              <span className="text-xs font-semibold uppercase tracking-[0.2em] text-slate-600 backdrop-blur animate-in fade-in slide-in-from-bottom-6 duration-700 mb-4 block">
+                Service Now Capabilities
+              </span>
+              <h2 className="text-4xl md:text-5xl font-semibold md:leading-13 text-slate-900 ">
+                Intelligent Digital Workflows <br />
+                <span className="text-[#7191e6] ">for Enterprise Operations</span>
+              </h2>
+              <p className="mt-8 max-w-xl text-lg text-slate-600 animate-in fade-in duration-700 delay-100 slide-in-from-bottom-8">
+                MVANTIX helps organizations simplify complex operations through <span className="text-[#3d52a1] font-bold underline decoration-[#7191e6] decoration-4 underline-offset-4">ServiceNow-powered</span> digital workflows.
+              </p>
+            </motion.div>
+          </div>
+
+          {/* Techy PNG Section with Animated Running Border */}
+          <div className="relative w-[300px] h-[300px] shrink-0 hidden lg:flex items-center justify-center">
             
-            <span className="text-xs  font-semibold uppercase tracking-[0.2em] text-slate-600 backdrop-blur animate-in fade-in slide-in-from-bottom-6 duration-700 mb-4 block">
-              Service Now Capabilities
-            </span>
-            <h2 className="text-4xl md:text-5xl font-semibold md:leading-13 text-slate-900 ">
-              Intelligent Digital Workflows <br />
-              <span className="text-[#7191e6] ">for Enterprise Operations</span>
-            </h2>
-            <p className="mt-8 max-w-xl text-lg text-slate-600 animate-in fade-in duration-700 delay-100 slide-in-from-bottom-8">
-              MVANTIX helps organizations simplify complex operations through <span className="text-[#3d52a1] font-bold underline decoration-[#7191e6] decoration-4 underline-offset-4">ServiceNow-powered</span> digital workflows.
-            </p>
-          </motion.div>
+            {/* Spinning Tech Ring (Running Border) */}
+            <motion.div
+              animate={{ rotate: 360 }}
+              transition={{ duration: 10, repeat: Infinity, ease: "linear" }}
+              className="absolute w-full h-full border-t-2 border-b-2 border-dashed border-[#7191e6]/40 rounded-full"
+            />
+            <motion.div
+              animate={{ rotate: -360 }}
+              transition={{ duration: 15, repeat: Infinity, ease: "linear" }}
+              className="absolute w-[85%] h-[85%] border-l-2 border-r-2 border-solid border-[#3d52a1]/20 rounded-full"
+            />
+            
+            {/* Soft Glow Effect */}
+            <div className="absolute w-48 h-48 bg-[#7191e6]/10 blur-3xl rounded-full" />
+
+            {/* The PNG Image */}
+            <div className="relative w-48 h-48">
+              <Image 
+                src="/images/sales1.png" 
+                alt="Workflows Tech" 
+                fill 
+                className="object-contain"
+                priority
+              />
+            </div>
+          </div>
         </div>
 
-        {/* Offerings Grid */}
+        {/* Offerings Grid - Keep Original */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {offerings.map((item, idx) => (
             <motion.div
@@ -84,7 +116,6 @@ const SalesOperations = () => {
               transition={{ delay: idx * 0.1 }}
               className="group p-10 bg-white border border-gray-100 rounded-[2.5rem] hover:shadow-2xl hover:shadow-[#3d52a1]/10 transition-all duration-500 relative overflow-hidden"
             >
-              {/* Hover Background Accent */}
               <div className="absolute top-0 right-0 w-24 h-24 bg-[#7191e6]/5 rounded-bl-[5rem] group-hover:bg-[#7191e6]/10 transition-colors" />
               
               <div className="relative z-10">
@@ -102,7 +133,7 @@ const SalesOperations = () => {
           ))}
         </div>
 
-        {/* Bottom Operational Results Bar */}
+        {/* Bottom Operational Results Bar - Keep Original */}
         <motion.div 
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}

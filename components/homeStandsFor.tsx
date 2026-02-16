@@ -99,7 +99,7 @@ const HomeStandsFor = () => {
               {/* Main Image in Circle */}
               <div className="w-full h-full rounded-full overflow-hidden border-12 border-white shadow-2xl relative z-10">
                 <Image
-                  src="/images/techcircle.jpg"
+                  src="/images/home2.jpg"
                   alt="MVANTIX Excellence"
                   fill
                   className="object-cover  transition-all duration-700"

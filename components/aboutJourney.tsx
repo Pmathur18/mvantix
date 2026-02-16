@@ -14,7 +14,7 @@ const steps = [
       "Communication Mastery: Training in professional articulation and stakeholder presence.",
       "Project Execution Discipline: Mastering workflow ownership and accountability.",
     ],
-    img: "/images/service.webp",
+    img: "/images/about2.jpg",
   },
   {
     title: "Month 2:",
@@ -26,7 +26,7 @@ const steps = [
       "Culture Fit: Do they integrate seamlessly with your existing team?",
       "Speed & Communication: How quickly do they adapt and how clearly do they report progress?",
     ],
-    img: "/images/service.webp",
+    img: "/images/about3.jpg",
   },
   {
     title: "Month 3 Onward:",
@@ -36,7 +36,7 @@ const steps = [
       "Flexible Models: Hire full time, contract, or scale up with dedicated 'Talent Pods'.",
       "Performance-Driven: A relationship built on trust and results.",
     ],
-    img: "/product4.jpg",
+    img: "/images/about4.jpg",
   },
 ];
 
@@ -51,122 +51,107 @@ const AboutJourney = () => {
   const height = useTransform(scrollYProgress, [0, 1], ["0%", "100%"]);
 
   return (
-    <section ref={ref} className="bg-gray-50 py-12 md:py-16 px-4">
-      <h2 className="text-4xl md:text-5xl font-semibold md:leading-13 text-[#7191e6] text-center mb-12">
+    <section ref={ref} className="bg-gray-50 py-12 md:py-24 px-4 overflow-hidden">
+      <h2 className="text-4xl md:text-5xl font-semibold md:leading-13 text-[#7191e6] text-center mb-16">
         The Mvantix <span className="text-black"> Journey </span>
       </h2>
 
       <div className="relative max-w-6xl mx-auto px-6">
-        {/* mobile line */}
+        {/* scroll lines - logic same rakha hai */}
         <div className="absolute left-4 top-0 h-full w-0.5 bg-gray-300 md:hidden" />
         <motion.div
           style={{ height }}
           className="absolute left-4 top-0 w-1 bg-[#3d52a1] origin-top md:hidden"
         />
 
-        {/* desktop line */}
         <div className="hidden md:block absolute left-1/2 top-0 h-full w-0.5 bg-gray-300 -translate-x-1/2" />
         <motion.div
           style={{ height }}
-          className="hidden md:block absolute left-1/2 top-0 w-1 bg-[#3d52a1] -translate-x-1/2 origin-top"
+          className="absolute left-1/2 top-0 hidden md:block w-1 bg-[#3d52a1] -translate-x-1/2 origin-top"
         />
 
         {steps.map((step, i) => (
-          <div key={i} className="mb-16 relative w-full">
-            {/* mobile dot */}
-            <div className="md:hidden absolute left-0 top-3 w-6 h-6 bg-[#7191e6] rounded-full border-4 border-white" />
+          <div key={i} className="mb-24 last:mb-0 relative w-full">
+            {/* Dots */}
+            <div className="md:hidden absolute left-0 top-3 w-6 h-6 bg-[#7191e6] rounded-full border-4 border-white z-20" />
+            <div className="hidden md:block absolute left-1/2 w-6 h-6 bg-[#7191e6] rounded-full -translate-x-1/2 border-4 border-white z-20" />
 
-            {/* desktop dot */}
-            <div className="hidden md:block absolute left-1/2 w-6 h-6 bg-[#7191e6] rounded-full -translate-x-1/2 border-4 border-white" />
-
-            {/* mobile layout */}
+            {/* mobile layout - Images ko thoda "Mast" kiya */}
             <div className="md:hidden pl-14">
-              <div className="bg-sky-50 border shadow-md rounded-xl p-5">
-                <h3 className="font-semibold text-[#3d52a1] mb-1">
-                  {step.title}
-                </h3>
-                {step.heading && (
-                  <h4 className="font-medium text-gray-800 mb-2">
-                    {step.heading}
-                  </h4>
-                )}
-                <p className="text-gray-600 text-sm mb-3">{step.desc}</p>
-
+              <div className="bg-white border border-gray-100 shadow-xl rounded-2xl p-6">
+                <h3 className="font-bold text-[#3d52a1] mb-1">{step.title}</h3>
+                <h4 className="font-bold text-gray-900 mb-3">{step.heading}</h4>
+                <p className="text-gray-600 text-sm mb-4 leading-relaxed">{step.desc}</p>
+                
                 {step.points && (
-                  <ul className="list-disc pl-5 text-gray-600 text-sm space-y-1">
-                    {step.points.map((p, idx) => (
-                      <li key={idx}>{p}</li>
-                    ))}
+                  <ul className="list-disc pl-5 text-gray-600 text-xs space-y-2 mb-5">
+                    {step.points.map((p, idx) => <li key={idx}>{p}</li>)}
                   </ul>
                 )}
 
-                <Image
-                  src={step.img}
-                  alt=""
-                  width={500}
-                  height={300}
-                  className="w-full h-auto rounded-lg mt-4"
-                />
+                <div className="relative rounded-xl overflow-hidden shadow-lg aspect-video">
+                  <Image src={step.img} alt="" fill className="object-cover" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
+                </div>
               </div>
             </div>
 
-            {/* desktop layout */}
-            <div className="hidden md:flex items-center justify-between w-full">
+            {/* desktop layout - Balanced & Attractive */}
+            <div className="hidden md:flex items-center justify-between w-full gap-12">
               {i % 2 === 0 ? (
                 <>
-                  <div className="w-[40%] bg-sky-50 border shadow-md rounded-xl p-6">
-                    <h3 className="font-semibold  text-[#3d52a1] mb-2">
-                      {step.title}
-                    </h3>
-                    {step.heading && (
-                      <h4 className="font-semibold text-xl text-gray-800 mb-2">
-                        {step.heading}
-                      </h4>
-                    )}
-                    <p className="text-gray-600 text-sm font-medium mb-3">
-                      {step.desc}
-                    </p>
+                  <motion.div 
+                    initial={{ opacity: 0, x: -30 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    className="w-[42%] bg-white border border-gray-100 shadow-xl rounded-[2rem] p-8 hover:shadow-2xl transition-all"
+                  >
+                    <h3 className="font-black text-[#3d52a1] text-xs uppercase tracking-widest mb-2">{step.title}</h3>
+                    <h4 className="font-bold text-2xl text-gray-900 mb-4">{step.heading}</h4>
+                    <p className="text-gray-600 text-sm font-medium mb-4 leading-relaxed">{step.desc}</p>
+                    <ul className="list-disc pl-5 text-gray-500 font-medium text-xs space-y-2">
+                      {step.points?.map((p, idx) => <li key={idx}>{p}</li>)}
+                    </ul>
+                  </motion.div>
 
-                    {step.points && (
-                      <ul className="list-disc pl-5 text-gray-600 font-medium text-sm space-y-1">
-                        {step.points.map((p, idx) => (
-                          <li key={idx}>{p}</li>
-                        ))}
-                      </ul>
-                    )}
-                  </div>
-
-                  <div className="w-[40%] flex justify-start">
-                    <Image src={step.img} alt="" width={280} height={280} />
-                  </div>
+                  <motion.div 
+                    initial={{ opacity: 0, scale: 0.8 }}
+                    whileInView={{ opacity: 1, scale: 1 }}
+                    className="w-[38%] relative group"
+                  >
+                    <div className="relative aspect-[4/3] rounded-[2rem] overflow-hidden border-8 border-white shadow-2xl">
+                      <Image src={step.img} alt="" fill className="object-cover group-hover:scale-110 transition-transform duration-700" />
+                      <div className="absolute inset-0 bg-[#3d52a1]/10 group-hover:bg-transparent transition-colors" />
+                    </div>
+                    {/* Decorative element */}
+                    <div className="absolute -z-10 -bottom-4 -right-4 w-full h-full border-2 border-[#7191e6]/20 rounded-[2rem]" />
+                  </motion.div>
                 </>
               ) : (
                 <>
-                  <div className="w-[40%] flex justify-center">
-                    <Image src={step.img} alt="" width={280} height={280} />
-                  </div>
+                  <motion.div 
+                    initial={{ opacity: 0, scale: 0.8 }}
+                    whileInView={{ opacity: 1, scale: 1 }}
+                    className="w-[38%] relative group"
+                  >
+                    <div className="relative aspect-[4/3] rounded-[2rem] overflow-hidden border-8 border-white shadow-2xl">
+                      <Image src={step.img} alt="" fill className="object-cover group-hover:scale-110 transition-transform duration-700" />
+                      <div className="absolute inset-0 bg-[#3d52a1]/10 group-hover:bg-transparent transition-colors" />
+                    </div>
+                    <div className="absolute -z-10 -bottom-4 -left-4 w-full h-full border-2 border-[#7191e6]/20 rounded-[2rem]" />
+                  </motion.div>
 
-                  <div className="w-[40%] bg-sky-50 border shadow-md rounded-xl p-6">
-                    <h3 className="font-semibold text-[#3d52a1] mb-2">
-                      {step.title}
-                    </h3>
-                    {step.heading && (
-                      <h4 className="font-semibold text-xl text-gray-800 mb-2">
-                        {step.heading}
-                      </h4>
-                    )}
-                    <p className="text-gray-600 font-medium text-sm mb-3">
-                      {step.desc}
-                    </p>
-
-                    {step.points && (
-                      <ul className="list-disc pl-5 font-medium text-gray-600 text-sm space-y-1">
-                        {step.points.map((p, idx) => (
-                          <li key={idx}>{p}</li>
-                        ))}
-                      </ul>
-                    )}
-                  </div>
+                  <motion.div 
+                    initial={{ opacity: 0, x: 30 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    className="w-[42%] bg-white border border-gray-100 shadow-xl rounded-[2rem] p-8 hover:shadow-2xl transition-all"
+                  >
+                    <h3 className="font-black text-[#3d52a1] text-xs uppercase tracking-widest mb-2">{step.title}</h3>
+                    <h4 className="font-bold text-2xl text-gray-900 mb-4">{step.heading}</h4>
+                    <p className="text-gray-600 text-sm font-medium mb-4 leading-relaxed">{step.desc}</p>
+                    <ul className="list-disc pl-5 text-gray-500 font-medium text-xs space-y-2">
+                      {step.points?.map((p, idx) => <li key={idx}>{p}</li>)}
+                    </ul>
+                  </motion.div>
                 </>
               )}
             </div>
