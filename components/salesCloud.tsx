@@ -2,6 +2,7 @@
 
 import React from "react";
 import { motion } from "framer-motion";
+import Image from "next/image";
 
 const SalesCloud = () => {
   const cloudServices = [
@@ -15,16 +16,14 @@ const SalesCloud = () => {
   return (
     <section className="py-12 md:py-16 bg-white overflow-hidden">
       <div className="container mx-auto px-6 max-w-6xl ">
-        
-        {/* Main Content Split */}
         <div className="flex flex-col lg:flex-row rounded-2xl overflow-hidden items-stretch gap-0 border-2 border-[#3d52a1]">
-          
-          {/* Left Block: Main Branding */}
-          <div className="lg:w-1/3 bg-[#3d52a1] p-12 text-white flex flex-col justify-between min-h-125">
+          <div className="lg:w-1/3 bg-[#3d52a1] p-12 text-white flex flex-col justify-between min-h-125 relative">
+            
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
+              className="relative z-10"
             >
               <span className="text-[#7191e6] text-[10px] font-semibold uppercase tracking-[0.5em] mb-6 block">
                 Infrastructure
@@ -35,16 +34,35 @@ const SalesCloud = () => {
               <p className="text-white/60 text-sm font-medium leading-relaxed">
                 MVANTIX enables enterprises to build cloud-native, resilient, and scalable systems.
               </p>
+
+              <motion.div 
+                initial={{ opacity: 0, scale: 0.8 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.3 }}
+                className="mt-12 relative w-full flex justify-start items-center" 
+              >
+                <div className="absolute left-0 w-32 h-32 bg-[#7191e6]/20 blur-2xl rounded-full  pointer-events-none" />
+              
+                <div className="relative w-56 h-40 md:w-56 md:h-44  drop-shadow-[0_0_15px_rgba(113,145,230,0.5)]">
+                  <Image 
+                    src="/images/devops1.png" 
+                    alt="DevOps Illustration" 
+                    fill 
+                    className="object-cover" 
+                    priority
+                  />
+                </div>
+              </motion.div>
             </motion.div>
 
-            <div className="pt-12">
+            <div className="pt-12 relative z-10">
               <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-[#7191e6] border-t border-white/10 pt-6">
                 SECURE. SCALABLE. HIGH-PERFORMANCE.
               </p>
             </div>
           </div>
 
-          {/* Right Block: Content Mosaic */}
           <div className="lg:w-2/3 grid grid-cols-1 md:grid-cols-2">
             {cloudServices.map((service, idx) => (
               <motion.div
@@ -82,7 +100,6 @@ const SalesCloud = () => {
           </div>
         </div>
 
-        {/* Closing Tagline - Overlapping the border */}
         <motion.div 
           initial={{ opacity: 0, scale: 0.9 }}
           whileInView={{ opacity: 1, scale: 1 }}

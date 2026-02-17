@@ -155,7 +155,7 @@ const values = [
        <section className="relative overflow-hidden bg-white py-12 md:py-16 ">
       {/* Background Decorative Blurs */}
       <div className="absolute inset-0 -z-10">
-        <div className="absolute top-0 left-1/4 h-[500px] w-[500px] rounded-full bg-[#7191e6]/5 blur-[100px]" />
+        <div className="absolute top-0 left-1/4 h-125 w-125 rounded-full bg-[#7191e6]/5 blur-[100px]" />
         <div className="absolute inset-0 opacity-[0.02]" style={{ backgroundImage: `radial-gradient(#000 1px, transparent 1px)`, backgroundSize: '40px 40px' }} />
       </div>
 
@@ -427,7 +427,7 @@ const values = [
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: idx * 0.1 }}
               whileHover={{ y: -4 }}
-              className="group relative rounded-[2rem] border border-slate-200 bg-white p-8 transition-all hover:border-[#7191e6]/30 hover:shadow-[0_20px_40px_-15px_rgba(113,145,230,0.15)] overflow-hidden"
+              className="group relative rounded-4xl border border-slate-200 bg-white p-8 transition-all hover:border-[#7191e6]/30 hover:shadow-[0_20px_40px_-15px_rgba(113,145,230,0.15)] overflow-hidden"
             >
               {/* Internal Accent Glow on Hover */}
               <div className="absolute -right-10 -bottom-10 h-32 w-32 rounded-full bg-[#7191e6]/5 blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
@@ -505,14 +505,14 @@ const values = [
             
             {/* Minimalist Decoration */}
             <div className="mt-12 hidden lg:block">
-              <div className="h-24 w-[1px] bg-linear-to-b from-[#7191e6] to-transparent" />
+              <div className="h-24 w-px bg-linear-to-b from-[#7191e6] to-transparent" />
             </div>
           </motion.div>
 
           {/* Right Steps Roadmap */}
           <div className="relative space-y-6">
             {/* Desktop Vertical Line Connector */}
-            <div className="absolute left-[2.25rem] top-8 bottom-8 w-[1px] bg-slate-100 hidden md:block" />
+            <div className="absolute left-9 top-8 bottom-8 w-[1px] bg-slate-100 hidden md:block" />
 
             {steps.map((item, idx) => (
               <motion.div
@@ -521,7 +521,7 @@ const values = [
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: idx * 0.1 }}
-                className="group relative flex items-start gap-6 rounded-[2rem] border border-slate-100 bg-slate-50/30 p-6 transition-all hover:bg-white hover:shadow-xl hover:shadow-slate-200/40 hover:border-[#7191e6]/20"
+                className="group relative flex items-start gap-6 rounded-4xl border border-slate-100 bg-slate-50/30 p-6 transition-all hover:bg-white hover:shadow-xl hover:shadow-slate-200/40 hover:border-[#7191e6]/20"
               >
                 {/* Step Indicator */}
                 <div className="relative z-10 flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-white border border-slate-200 text-[#7191e6] shadow-sm transition-all group-hover:bg-[#7191e6] group-hover:text-white group-hover:scale-110">
@@ -581,7 +581,7 @@ const values = [
             </div>
 
             {/* Values Card */}
-            <div className="rounded-[2rem] border border-slate-200 bg-white p-8 shadow-2xl shadow-slate-200/40 relative overflow-hidden group">
+            <div className="rounded-4xl border border-slate-200 bg-white p-8 shadow-2xl shadow-slate-200/40 relative overflow-hidden group">
               <div className="absolute top-0 right-0 p-4 opacity-[0.05] group-hover:rotate-12 transition-transform">
                 <IconCircleCheck size={80} stroke={1.5} />
               </div>

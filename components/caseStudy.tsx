@@ -15,7 +15,7 @@ const studies = [
     category: "Cloud & ERP",
     title: "Unified Data Cloud & ERP Architecture",
     description: "Streamlined enterprise operations with unified data systems and faster deployments.",
-    image: "/images/TechHub2.webp",
+    image: "/images/home3.jpg",
     icon: <IconDatabase size={24} />,
     color: "#7191e6"
   },
@@ -23,7 +23,7 @@ const studies = [
     category: "CRM Solutions",
     title: "Salesforce & CRM Optimization",
     description: "Delivering high-impact Salesforce solutions for smarter workforce integration.",
-    image: "/images/TechHub.avif",
+    image: "/images/home4.jpg",
     icon: <IconCloudCode size={24} />,
     color: "#3d52a1"
   },
@@ -31,7 +31,7 @@ const studies = [
     category: "AI & Automation",
     title: "AI Driven Efficiency for Enterprise",
     description: "Harnessing AI to drive automation-driven efficiency across technology firms.",
-    image: "/images/herobanner.jpg",
+    image: "/images/home5.jpg",
     icon: <IconRobot size={24} />,
     color: "#7191e6"
   }

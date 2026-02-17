@@ -10,7 +10,6 @@ import {
   IconLoader2,
   IconCircleDot,
   IconDeviceAnalytics,
-  IconRocket,
   IconCheck,
   IconExclamationCircle
 } from "@tabler/icons-react";
