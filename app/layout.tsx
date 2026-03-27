@@ -40,26 +40,31 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <script src="https://cdn-in.pagesense.io/js/morzeein/e9d4db5d152049c294aa023a247e5c4f.js"></script>
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${poppins.variable} ${sora.variable} antialiased`}
       >
         <Providers>
           <Header1/>
           {children}
-           {/* Zoho SalesIQ Script */}
-        <Script id="zoho-salesiq-init" strategy="afterInteractive">
-          {`
-            window.$zoho=window.$zoho || {};
-            $zoho.salesiq=$zoho.salesiq||{ready:function(){}};
-          `}
-        </Script>
-
-        <Script
-          id="zoho-salesiq-widget"
-          src="https://salesiq.zohopublic.in/widget?wc=siqc64af953fda77f44847639357a51eb0b5135fdcd79266059e9fc918d5a991333"
-          strategy="afterInteractive"
-        />
+          <Script id="zsiqchat" strategy="afterInteractive">
+  {`
+    var $zoho = window.$zoho || {};
+    $zoho.salesiq = $zoho.salesiq || {
+      widgetcode: "siqc64af953fda77f44847639357a51eb0b5135fdcd79266059e9fc918d5a991333",
+      values: {},
+      ready: function(){}
+    };
+    var d = document;
+    var s = d.createElement("script");
+    s.type = "text/javascript";
+    s.id = "zsiqscript";
+    s.defer = true;
+    s.src = "https://salesiq.zoho.in/widget";
+    var t = d.getElementsByTagName("script")[0];
+    t.parentNode.insertBefore(s, t);
+  `}
+</Script>
+        
           <Footer/>
         </Providers>
       </body>
