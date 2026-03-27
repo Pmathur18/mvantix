@@ -46,6 +46,18 @@ export default function RootLayout({
         <Providers>
           <Header1/>
           {children}
+            <Script id="zoho-salesiq-init" strategy="afterInteractive">
+          {`
+            window.$zoho=window.$zoho || {};
+            $zoho.salesiq=$zoho.salesiq||{ready:function(){}};
+          `}
+        </Script>
+
+        <Script
+          id="zoho-salesiq-widget"
+          src="https://salesiq.zohopublic.in/widget?wc=siqc64af953fda77f44847639357a51eb0b5135fdcd79266059e9fc918d5a991333"
+          strategy="afterInteractive"
+        />
           <Script id="zsiqchat" strategy="afterInteractive">
   {`
     var $zoho = window.$zoho || {};
