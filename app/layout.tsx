@@ -4,6 +4,7 @@ import "./globals.css";
 import Header1 from "@/components/header1";
 import Footer from "@/components/footer";
 import Providers from "@/app/providers";
+import Script from "next/script";
   
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -39,12 +40,26 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <script src="https://cdn-in.pagesense.io/js/morzeein/e9d4db5d152049c294aa023a247e5c4f.js"></script>
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${poppins.variable} ${sora.variable} antialiased`}
       >
         <Providers>
           <Header1/>
           {children}
+           {/* Zoho SalesIQ Script */}
+        <Script id="zoho-salesiq-init" strategy="afterInteractive">
+          {`
+            window.$zoho=window.$zoho || {};
+            $zoho.salesiq=$zoho.salesiq||{ready:function(){}};
+          `}
+        </Script>
+
+        <Script
+          id="zoho-salesiq-widget"
+          src="https://salesiq.zohopublic.in/widget?wc=siqc64af953fda77f44847639357a51eb0b5135fdcd79266059e9fc918d5a991333"
+          strategy="afterInteractive"
+        />
           <Footer/>
         </Providers>
       </body>
